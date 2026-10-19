@@ -1,0 +1,20 @@
+# Netlify settings for the website (the "web" folder). There is nothing to build.
+[build]
+  publish = "web"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(self)"
+
+# Cache the code for a few minutes only, so updates show up quickly.
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=300"

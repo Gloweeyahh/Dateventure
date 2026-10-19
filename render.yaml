@@ -1,0 +1,33 @@
+# Render "blueprint" for the API. Render reads this file when you connect the GitHub repo.
+services:
+  - type: web
+    name: dateventure-api
+    runtime: node
+    plan: free
+    region: frankfurt        # closest Render region to Nigeria. Other options: oregon, ohio, virginia, singapore
+    buildCommand: npm install
+    startCommand: node api/server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: MONGODB_URI        # paste your MongoDB Atlas connection string
+        sync: false
+      - key: SIGNING_SECRET     # Render makes a long random one for you and keeps it
+        generateValue: true
+      - key: ALLOWED_ORIGINS    # your website address, e.g. https://dateventure.netlify.app
+        sync: false
+      - key: CONTACT_EMAIL      # your email: the free map services ask who is calling them
+        sync: false
+      - key: GOOGLE_PLACES_API_KEY   # optional: real Google photos. Leave empty to skip
+        sync: false
+      - key: GOOGLE_SEARCH_MONTHLY_CAP
+        value: "4500"
+      - key: GOOGLE_PHOTO_MONTHLY_CAP
+        value: "900"
+      - key: GOOGLE_CARD_PHOTOS
+        value: "true"
+      - key: GOOGLE_CARD_PHOTO_SHARE
+        value: "0.5"
+      - key: TRUST_PROXY
+        value: "true"

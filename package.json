@@ -1,0 +1,16 @@
+{
+  "name": "dateventure",
+  "version": "1.0.0",
+  "description": "Dateventure: find a date you'll both love, preview it, send the invite.",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node api/server.js",
+    "test": "node --test",
+    "preview": "node tools/build-preview.js",
+    "smoke": "node api/scripts/smoke.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.9.0"
+  }
+}
