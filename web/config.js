@@ -12,7 +12,7 @@
    MAPS_EMBED_KEY: optional. A Google "Maps Embed API" key (free to use) to show a small map
               on each venue page. Leave empty to skip the map. */
 window.DV_CONFIG = {
-  API_BASE: "",
+  API_BASE: "https://dateventure-api.onrender.com",
   MAPS_EMBED_KEY: "",
   PHOTOS: {
     hero: "https://images.unsplash.com/photo-1513279922550-250c2129b13a?auto=format&fit=crop&w=1400&q=75",
