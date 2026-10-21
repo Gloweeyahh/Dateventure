@@ -8,7 +8,7 @@ when they say yes.
 
 | Piece | Where it lives | What it does | Free host |
 |---|---|---|---|
-| Website | `web/` | The pages people see. No build step. | Netlify (or GitHub Pages / Vercel) |
+| Website | `web/` | No build step. | Netlify (or GitHub Pages / Vercel) |
 | API | `api/` | Finds venues anywhere (OpenStreetMap), saves invitations, answers accept/decline | Render |
 | Database | MongoDB Atlas | Keeps invitations so links keep working | Atlas M0 |
 | Shared brain | `web/core/` | Money, budget rules, ranking, invitations. Used by BOTH website and API | n/a |
@@ -16,9 +16,9 @@ when they say yes.
 ## Commands (need Node 20 or newer)
 
 ```
-npm install          # once, installs the MongoDB driver
+npm install          # installs the MongoDB driver
 npm test             # runs all the automated tests (no internet needed)
-npm run preview      # builds dist/dateventure-preview.html, a one-file demo
+npm run preview      # builds dist/dateventure-preview.html
 npm start            # starts the API locally on http://localhost:3000
 npm run smoke -- https://YOUR-API.onrender.com https://YOUR-SITE.netlify.app   # checks a live deployment
 ```
